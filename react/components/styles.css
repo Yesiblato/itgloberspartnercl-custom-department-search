@@ -1,0 +1,34 @@
+
+.container__items {
+  display: flex;
+  align-items: center;
+}
+
+.title__department {
+  font-weight: 700;
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: Helvetica, sans-serif;
+}
+
+.container__departmentSearch {
+  background-color: #ebedee;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__departmentGroup option {
+  font-size: 1em;
+  font-weight: 500;
+  font-family: Helvetica, sans-serif;
+}
+
+@media (max-width:425px) {
+  .container__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
