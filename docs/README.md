@@ -1,8 +1,8 @@
 # CUSTOM DEPARTMENT SEARCH COMPONENT
 
-Este es un componente personalizado que permite realizar una busqueda por departamento en la tienda.
+This is a custom component that allows you to search by department in the store.
 
-En este componente se trabajó con las siguientes tecnologías:
+In this component we worked with the following technologies:
 
 - Vtex.
 - React.
@@ -10,20 +10,20 @@ En este componente se trabajó con las siguientes tecnologías:
 - Typescript.
 - Css.
 
-## Imágenes del componente.
+## Component's images.
 ![DepartmentSearch Desktop-github](https://user-images.githubusercontent.com/87024446/219832542-f5fdc11c-4700-4982-aa26-baa6974182a6.png)
 
 ## Configuration 
 
-### Paso 1 - Clonar
+### Step 1 - Clone
 
-Realizar la clonación del siguiente repositorio:
-- [Repositorio](https://github.com/Yesiblato/itgloberspartnercl-custom-department-search)
+Cloning the following repository
+- [Repository](https://github.com/Yesiblato/itgloberspartnercl-custom-department-search)
 
-### Paso 2 - Editar el Manifest.json 
+### Step 2 - Edit the Manifest.json 
 
-Ingresar al archivo manifest.json y realizar las siguentes modificaciones en: `vendor`, `name`, `version`, `title` y `description`
-como se muestra en el siguiente ejemplo: 
+Enter the manifest.json file and make the following changes to: `vendor`, `name`, `version`, `title` and `description`
+as shown in the following example:
 
 ```js
 {
@@ -34,7 +34,7 @@ como se muestra en el siguiente ejemplo:
   "description": "Daremos la opción de elegir un departamento en nuestra barra de búsuqeda",
 }
 ```
-Además, verifique que el archivo cuente con los siguientes builders: 
+Also, check that the file has the following builders and the dependencies:
 
 ```js
   "builders": {
@@ -44,35 +44,59 @@ Además, verifique que el archivo cuente con los siguientes builders:
     "store": "0.x"
   }
 ```
-### Paso 3 - Instalar node-modules
-
-Para realizar esta instalación de node-modules, debe estar ubicado en la carpeta de `react` de la aplicación y ejecutar el comando `yarn`, y tendrá instaladas todas las dependencias necesarias para usar esta plantilla.
-
-### Paso 4 - Ejecutar el preview
-
-Despues de realizar los pasos anteriores puede verificar si su componente está funcionando ejecutando el comando `vtex link` si todo funciona correctamente deberá ver en consola `Sending locale change event`.
-
-Si la consola muestra algún error, por favor verificar los pasos anteriores y vuelva a ejecutar `vtex link`.
-
-### Paso 5 - Implementar el componente
-
-Por último, para utilizar el componente debe agregarlo a las `dependencies` en el `manifest.json` de su tienda (store-theme) de la siguiente manera:
-
-- vendor.name : version. 
-
-Por ejemplo: 
-```js
-  "dependencies": {
-   "itgloberspartnercl.custom-department-search": "0.x"
-  }
-```
-
-## Dependencies
+### Dependencies
 ```js
    "vtex.css-handles": "0.x",
    "vtex.store-graphql": "2.x",
    "vtex.store-components": "3.x"
 ```
+
+### Paso 4 - Ejecutar el preview
+
+### Step 3 - Install node-modules.
+
+To carry out this installation of Node-Modules, it must be located in the `react` folder of the application and execute the `yarn` command, and will have all the necessary units to use this template installed.
+
+### Step 4 - Execute the preview.
+
+After performing the previous steps you can verify if its component is running by running the `Vtex Link` command if everything works correctly should see in` Sending locale change event`.
+
+If the console shows any error, please verify the previous steps and re -execute `vtex link`.
+
+### Step 5 - Deploy the component
+
+Finally, to use the component you must add it to the `dependencies` in the `manifest.json` of your store (store-theme) as follows:
+
+- vendor.name : version. 
+
+For example:
+```js
+  "dependencies": {
+   "itgloberspartnercl.custom-department-search": "0.x"
+  }
+```
+And add the list-context block to the store-theme. For example:
+
+```js
+{
+  "flex-layout.row#busqueda__opciones": {
+    "children": [
+      "departmentSearch"
+    ]
+  }
+}
+```
+
+## Customization
+
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on 
+
+| CSS Handles |
+| ----------- | 
+| `container__departmentGroup` | 
+| `options__department` | 
+| `title__department--title` | 
+
 
 ## Contributors ✨
 
