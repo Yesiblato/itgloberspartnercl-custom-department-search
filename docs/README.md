@@ -1,114 +1,103 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+# CUSTOM DEPARTMENT SEARCH COMPONENT
 
-# APP NAME
+This is a custom component that allows you to search by department in the store.
 
-<!-- DOCS-IGNORE:start -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<!-- DOCS-IGNORE:end -->
+In this component we worked with the following technologies:
 
-Under the app's name, you should explain the topic, giving a **brief description** of its **functionality** in a store when installed.
+- Vtex.
+- React.
+- Graphql.
+- Typescript.
+- Css.
 
-Next, **add media** (either an image of a GIF) with the rendered components, so that users can better understand how the app works in practice. 
-
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
+## Component's images.
+![DepartmentSearch Desktop-github](https://user-images.githubusercontent.com/87024446/219832542-f5fdc11c-4700-4982-aa26-baa6974182a6.png)
 
 ## Configuration 
 
-In this section, you first must **add the primary instructions** that will allow users to use the app's blocks in their store, such as:
+### Step 1 - Clone
 
-1. Adding the app as a theme dependency in the `manifest.json` file;
-2. Declaring the app's main block in a given theme template or inside another block from the theme.
+Cloning the following repository
+- [Repository](https://github.com/Yesiblato/itgloberspartnercl-custom-department-search)
 
-Remember to add a table with all blocks exported by the app and their descriptions. You can verify an example of it on the [Search Result documentation](https://vtex.io/docs/components/all/vtex.search-result@3.56.1/). 
+### Step 2 - Edit the Manifest.json 
 
-Next, add the **props table** containing your block's props. 
+Enter the manifest.json file and make the following changes to: `vendor`, `name`, `version`, `title` and `description`
+as shown in the following example:
 
-If the app exports more than one block, create several tables - one for each block. For example:
+```js
+{
+"vendor": "itgloberspartnercl",
+  "name": "custom-department-search",
+  "version": "0.0.1",
+  "title": "Search Bar customizada",
+  "description": "Daremos la opción de elegir un departamento en nuestra barra de búsuqeda",
+}
+```
+Also, check that the file has the following builders and the dependencies:
 
-### `block-1` props
+```js
+  "builders": {
+    "react": "3.x",
+    "messages": "1.x",
+    "docs": "0.x",
+    "store": "0.x"
+  }
+```
+### Dependencies
+```js
+   "vtex.css-handles": "0.x",
+   "vtex.store-graphql": "2.x",
+   "vtex.store-components": "3.x"
+```
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+### Paso 4 - Ejecutar el preview
 
+### Step 3 - Install node-modules.
 
-### `block-2` props
+To carry out this installation of Node-Modules, it must be located in the `react` folder of the application and execute the `yarn` command, and will have all the necessary units to use this template installed.
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+### Step 4 - Execute the preview.
 
-Prop types are: 
+After performing the previous steps you can verify if its component is running by running the `Vtex Link` command if everything works correctly should see in` Sending locale change event`.
 
-- `string` 
-- `enum` 
-- `number` 
-- `boolean` 
-- `object` 
-- `array` 
+If the console shows any error, please verify the previous steps and re -execute `vtex link`.
 
-When documenting a prop whose type is `object` or `array` another prop table will be needed. You can create it following the example below:
+### Step 5 - Deploy the component
 
-- `propName` object:
+Finally, to use the component you must add it to the `dependencies` in the `manifest.json` of your store (store-theme) as follows:
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+- vendor.name : version. 
 
+For example:
+```js
+  "dependencies": {
+   "itgloberspartnercl.custom-department-search": "0.x"
+  }
+```
+And add the list-context block to the store-theme. For example:
 
-Remember to also use this Configuration section to  **showcase any necessary disclaimer** related to the app and its blocks, such as the different behavior it may display during its configuration. 
-
-## Modus Operandi *(not mandatory)*
-
-There are scenarios in which an app can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the app in their store.
-
-If you feel compelled to give further details about the app, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
+```js
+{
+  "flex-layout.row#busqueda__opciones": {
+    "children": [
+      "departmentSearch"
+    ]
+  }
+}
+```
 
 ## Customization
 
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in apps:
-
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
-
-Thereafter, you should add a single column table with the available CSS handles for the app, like the one below. Note that the Handles must be ordered alphabetically.
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on 
 
 | CSS Handles |
 | ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
+| `container__departmentGroup` | 
+| `options__department` | 
+| `title__department--title` | 
 
-
-If there are none, add the following sentence instead:
-
-`No CSS Handles are available yet for the app customization.`
-
-<!-- DOCS-IGNORE:start -->
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
-
-<!-- DOCS-IGNORE:end -->
-
----- 
-
-Check out some documentation models that are already live: 
-- [Breadcrumb](https://github.com/vtex-apps/breadcrumb)
-- [Image](https://vtex.io/docs/components/general/vtex.store-components/image)
-- [Condition Layout](https://vtex.io/docs/components/all/vtex.condition-layout@1.1.6/)
-- [Add To Cart Button](https://vtex.io/docs/components/content-blocks/vtex.add-to-cart-button@0.9.0/)
-- [Store Form](https://vtex.io/docs/components/all/vtex.store-form@0.3.4/)
+Yesica Johana Blanco Torregrosa
